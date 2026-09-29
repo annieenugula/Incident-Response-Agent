@@ -1,0 +1,26 @@
+[
+  {
+    "id": "INC-001",
+    "title": "Payment API outage",
+    "root_cause": "Database connection pool was exhausted",
+    "resolution": "Restarted affected service and increased the connection pool limit",
+    "runbook": "payment-api-db-recovery",
+    "lesson": "Monitor database connection usage before saturation"
+  },
+  {
+    "id": "INC-002",
+    "title": "Checkout timeout",
+    "root_cause": "Slow database queries caused API requests to time out",
+    "resolution": "Identified the slow query, added an index, and restarted the service",
+    "runbook": "checkout-timeout-recovery",
+    "lesson": "Check database query latency during checkout incidents"
+  },
+  {
+    "id": "INC-003",
+    "title": "Notification service failure",
+    "root_cause": "Message queue stopped processing events",
+    "resolution": "Restarted the queue consumer and replayed failed messages",
+    "runbook": "notification-queue-recovery",
+    "lesson": "Check queue consumer health before investigating application code"
+  }
+]
